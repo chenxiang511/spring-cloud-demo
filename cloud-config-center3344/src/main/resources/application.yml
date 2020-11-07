@@ -1,0 +1,32 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-center #注册到eureka中的微服务名称
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/chenxiang511/cloud-demo-config-center.git #github上配置文件仓库的地址，这里采用http的方式读取
+          search-paths:
+            - cloud-demo-config-center
+      label: main #默认读取的分支
+  #rabbitMQ相关配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+
+#暴露BUS刷新配置的端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "bus-refresh"
