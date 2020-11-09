@@ -56,6 +56,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!--这里我使用的rabbitmq3.8.9+erlang23.1,对spring-amqp的最低版本要求为2.2.2.RELEASE-->
         <dependency>
             <groupId>org.springframework.amqp</groupId>
             <artifactId>spring-amqp</artifactId>
