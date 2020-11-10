@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @Author cx
- * @Date: 2020/6/19  8:08
+ * @Date 2020/6/19  8:08
  */
 
 @RestController
@@ -91,5 +91,10 @@ public class PaymentController {
             e.printStackTrace();
         }
         return serverPort;
+    }
+
+    @GetMapping("/zipkin")
+    public String paymentZipKin(){
+        return "测试链路追踪，服务提供端，端口号："+serverPort;
     }
 }
