@@ -20,13 +20,11 @@ public class MyLB implements LoadBalancer{
 
     @Override
     public ServiceInstance instances(List<ServiceInstance> serviceInstances) {
-
         int index = getAndIncrement() % serviceInstances.size();
         return serviceInstances.get(index);
     }
 
     public final int getAndIncrement(){
-
         int current;
         int next;
         do {
